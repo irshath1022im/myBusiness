@@ -29,17 +29,10 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($transections as $item)
-                                
-                            <tr>
-                                <td scope="row">{{ $item->id }}</td>
-                                <td>{{ $item->customer->customer }}</td>
-                                <td>{{ $item->amount }}</td>
-                                <td>{{ $item->remark }}</td>
-                            </tr>
-                            @endforeach
+                            
+                            @livewire('transections.logs-by-customer-id', ['customer_id' => $customer_id])
+                            
                         </tbody>
-
                       </table>
                       
                 </div>
@@ -56,15 +49,8 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($transections as $item)
-                                
-                            <tr>
-                                <td scope="row">{{ $item->id }}</td>
-                                <td>{{ $item->customer->customer }}</td>
-                                <td>{{ $item->amount }}</td>
-                                <td>{{ $item->remark }}</td>
-                            </tr>
-                            @endforeach
+                         
+                            @livewire('transections.logs-by-customer-id', ['customer_id' => 1])
                         </tbody>
                       </table>
                       
