@@ -1,16 +1,13 @@
 <div>
 
-    {{-- @dump($transections) --}}
-    {{-- @dump($transections->sum('amount')) --}}
-    {{-- @dump($transections[0]->sale->amount) --}}
-   
+    {{-- @dump($visa_costs[0]->sale->amount) --}}
 
-    @if (count($transections) > 0 )
+    @if (count($visa_costs) > 0 )
         
    
         <div class="card">
             <div class="card-header">
-                TRANSECTION LOGS BY CUSTOMER 
+                TRANSECTION LOGS BY IRSHATH 
             </div>
 
             <div class="card-body">
@@ -27,7 +24,7 @@
 
 
                     
-                    @foreach ($transections as $item)
+                    @foreach ($visa_costs as $item)
 
                             <tr>
                                 <td scope="row">{{ $item->id }}</td>
@@ -42,7 +39,10 @@
             </div>
 
             <div class="card-footer">
-              <p class="d-inline bg-success p-2">Balance: </p>   {{ $transections[0]->sale->amount - $transections->sum('amount')}} QR 
+              <p class="d-inline bg-success p-2">Total Spent: </p>   {{ $visa_costs->sum('amount')}} QR 
+              <p class="d-inline bg-success p-2">Visa Sold: </p>{{ $visa_costs[0]->visa->sale->amount }} QR 
+              <p class="d-inline bg-success p-2">Profit: </p>{{ $visa_costs[0]->visa->sale->amount - $visa_costs->sum('amount') }} QR 
+
             </div>
 
 
@@ -54,7 +54,5 @@
         <strong>NO TRANSECTION FOUND....</strong>
     </div>
     @endif
-
-
 
 </div>

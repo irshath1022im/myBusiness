@@ -7,6 +7,8 @@ use Livewire\Component;
 class Show extends Component
 {
 
+    //getting data from views/visas/show.blade.php
+
     public $visa_id;
     public $country;
     public $cost;

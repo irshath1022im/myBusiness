@@ -24,4 +24,9 @@ class Visa extends Model
         return $this->hasMany(Transection::class);
     }
 
+    public function visa_costs()
+    {
+        return $this->hasMany(VisaCost::class);
+    }
+
 }

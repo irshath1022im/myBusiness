@@ -10,6 +10,11 @@ class IndexTransection extends Component
 
     public $customer_id;
 
+    public function mount($customer_id)
+    {
+        $this->customer_id = $customer_id;
+    }
+
     public function render()
     {
         $result = Transection::with('customer')->get();

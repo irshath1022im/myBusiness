@@ -5,14 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Transection extends Model
+class VisaCost extends Model
 {
     use HasFactory;
 
-    
-    public function sale()
+    public function visa()
     {
-        return $this->belongsTo(Sale::class);
+        return $this->belongsTo(Visa::class);
     }
-
 }

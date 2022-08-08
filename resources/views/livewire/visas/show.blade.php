@@ -7,8 +7,15 @@
         
         @livewire('sales.sale-show',['visa_id' => $visa_id])
 
-    <hr>
-        @livewire('transections.index-transection',['visa_id' => $visa_id])
+        
+        <hr>
+
+
+        @livewire('components.visa-cost',['visa_id' => 1])
+
+
+
+   
     </div>
 </div>
 </div>

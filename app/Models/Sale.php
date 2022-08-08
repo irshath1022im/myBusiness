@@ -19,5 +19,16 @@ class Sale extends Model
         return $this->belongsTo(Customer::class);
     }
 
+    public function transections()
+    {
+        return $this->hasMany(Transection::class);
+    }
+
+    public function visa_costs()
+    {
+        return $this->hasMany(VisaCost::class);
+    }
+
+
 
 }

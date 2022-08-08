@@ -8,16 +8,20 @@ use Livewire\Component;
 class LogsByCustomerId extends Component
 {
 
-    public $customer_id;
+    public $sale_id;
 
-    public function mount($customer_id)
+    public function mount($sale_id)
     {
-        $this->customer_id = $customer_id;
+        $this->sale_id = $sale_id;
     }
 
     public function render()
     {
-        $result = Transection::where('customer_id', 1)->get();
+        $result = Transection::where('sale_id', $this->sale_id)
+                    ->with('sale')
+                    ->get();
         return view('livewire.transections.logs-by-customer-id',['transections' => $result]);
     }
+
+    
 }
