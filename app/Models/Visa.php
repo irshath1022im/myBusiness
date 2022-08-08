@@ -19,10 +19,10 @@ class Visa extends Model
         return $this->hasOne(Sale::class);
     }
 
-    public function transections()
-    {
-        return $this->hasMany(Transection::class);
-    }
+    // public function transections()
+    // {
+    //     return $this->hasMany(Transection::class);
+    // }
 
     public function visa_costs()
     {

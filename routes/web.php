@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\VisaController;
 use App\Models\Customer;
 use App\Models\Projects;
@@ -31,9 +32,6 @@ Route::get('/projects', function(){
 
 Route::resource('/visas', VisaController::class);
 
-Route::get('customers', function(){
-    return Customer::with(['sales' => function($query){
-        return $query->with('transections');
-         }])
-        ->get();
-});
+
+
+Route::resource('customers',  CustomerController::class);
