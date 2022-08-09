@@ -1,9 +1,10 @@
 <?php
 
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\VisaController;
 use App\Models\Customer;
-use App\Models\Projects;
+use App\Models\Project;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,16 +23,8 @@ Route::get('/', function () {
 });
 
 
-Route::get('/projects', function(){
-    $query = Projects::with(['visas' => function($query){
-        return $query->with('sale');
-    }])->get();
-
-    return view('projects', ['projects' => $query]);
-});
+Route::resource('/projects', ProjectController::class);
 
 Route::resource('/visas', VisaController::class);
-
-
 
 Route::resource('customers',  CustomerController::class);

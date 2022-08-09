@@ -15,7 +15,7 @@
                         <div class="card-title">ITEMS</div>
                     </div>
 
-                    {{-- @dump(count($item->visas)) --}}
+                    {{-- @dump(count($project->visas)) --}}
 
                    
                     @if (count($project->visas))
@@ -25,6 +25,7 @@
                                 <thead>
                                     <tr>
                                         <th>VISA ID</th>
+                                        <th>VP NUMBER</th>
                                         <th>COUNTRY</th>
                                         <th>POSITION</th>
                                         <th>COST</th>
@@ -33,9 +34,11 @@
                                 </thead>
                                 <tbody>
 
+
                                     @foreach ($project->visas as $visa)
                                         <tr>
                                             <td scope="row">{{ $visa->id }}</td>
+                                            <td>{{ $visa->vpnumber }}</td>
                                             <td>{{ $visa->country }}</td>
                                             <td>{{ $visa->position }}</td>
                                             <td>{{ $visa->cost }}</td>
@@ -55,12 +58,6 @@
 
                
 
-                     @elseif (count($project->sponsorChanges))
-
-                     <div class="alert alert-light" role="alert">
-                        <strong>SPONSOR CHANGE CARD</strong>
-                    </div>
-                    
 
                     @else
                     

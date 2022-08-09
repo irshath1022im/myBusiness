@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateVisasTable extends Migration
+class CreateProjectItemVisasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,18 @@ class CreateVisasTable extends Migration
      */
     public function up()
     {
-        Schema::create('visas', function (Blueprint $table) {
+        Schema::create('project_item_visas', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('project_id');
+            $table->string('vpnumber');
+            $table->unsignedBigInteger('company_id');
             $table->string('country');
             $table->string('position');
             $table->integer('qty');
             $table->integer('cost');
-            $table->boolean('consumed')->default(0);
             $table->timestamps();
-            $table->foreign('project_id')->on('projects')->references('id');
+            $table->foreign('project_id')->references('id')->on('projects');
+            $table->foreign('company_id')->references('id')->on('companies');
         });
     }
 
@@ -33,6 +35,6 @@ class CreateVisasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('visas');
+        Schema::dropIfExists('project_item_visas');
     }
 }

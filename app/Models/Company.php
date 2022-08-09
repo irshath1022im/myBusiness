@@ -5,12 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class VisaCost extends Model
+class Company extends Model
 {
     use HasFactory;
 
-    public function visa()
+    public function visas()
     {
-        return $this->belongsTo(ProjectItemVisa::class, 'project_item_visa_id');
+        return $this->hasMany(ProjectItemVisa::class);
     }
+
 }

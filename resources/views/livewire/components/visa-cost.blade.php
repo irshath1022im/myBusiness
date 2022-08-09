@@ -16,7 +16,7 @@
                     <thead>
                         <tr>
                             <th>ORDER #</th>
-                            <th>AMOUNT</th>
+                            <th>PAID  </th>
                             <th>REMARK</th>
                         </tr>
                     </thead>
@@ -37,6 +37,8 @@
                 </table>
             
             </div>
+
+            {{-- @dump($visa_costs ) --}}
 
             <div class="card-footer">
               <p class="d-inline bg-success p-2">Total Spent: </p>   {{ $visa_costs->sum('amount')}} QR 

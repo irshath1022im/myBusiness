@@ -16,12 +16,12 @@ class CreateSalesTable extends Migration
         Schema::create('sales', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('customer_id');
-            $table->unsignedBigInteger('visa_id');
+            $table->unsignedBigInteger('project_item_visa_id');
             $table->integer('amount');
             $table->text('remakr')->nullable();
             $table->timestamps();
             $table->foreign('customer_id')->on('customers')->references('id');
-            $table->foreign('visa_id')->on('visas')->references('id');
+            $table->foreign('project_item_visa_id')->on('project_item_visas')->references('id');
         });
     }
 

@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Project;
-use App\Models\ProjectItemVisa;
 use Illuminate\Http\Request;
 
-class VisaController extends Controller
+class ProjectController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,12 +17,10 @@ class VisaController extends Controller
         //
         $query = Project::with(['visas' => function($query){
             return $query->with('company');
-                }, 'project_type'])
-            ->where('project_type_id', 1)
-        ->get();
+        },'sponsorChanges'])->get();
 
         // return $query;
-        return view('visas.index', ['projects' => $query]);
+        return view('projects', ['projects' => $query]);
     }
 
     /**
@@ -56,8 +53,6 @@ class VisaController extends Controller
     public function show($id)
     {
         //
-        $result = ProjectItemVisa::FindOrfail($id);
-        return view('visas.show',['visa' => $result]);
     }
 
     /**

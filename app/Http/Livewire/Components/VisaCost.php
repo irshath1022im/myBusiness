@@ -17,7 +17,8 @@ class VisaCost extends Component
 
     public function render()
     {
-        $result = ModelsVisaCost::where('visa_id', $this->visa_id)
+        $result = ModelsVisaCost::where('project_item_visa_id', $this->visa_id)
+                        ->with('visa')
                     ->get();
         return view('livewire.components.visa-cost', ['visa_costs' => $result]);
     }

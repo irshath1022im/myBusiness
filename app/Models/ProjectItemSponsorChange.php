@@ -5,12 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class VisaCost extends Model
+class ProjectItemSponsorChange extends Model
 {
     use HasFactory;
-
-    public function visa()
-    {
-        return $this->belongsTo(ProjectItemVisa::class, 'project_item_visa_id');
-    }
 }

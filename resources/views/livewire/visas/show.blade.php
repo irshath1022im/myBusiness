@@ -11,7 +11,7 @@
         <hr>
 
 
-        @livewire('components.visa-cost',['visa_id' => 1])
+        @livewire('components.visa-cost',['visa_id' => $visa_id])
 
 
 

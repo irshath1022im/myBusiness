@@ -11,7 +11,7 @@ class Sale extends Model
 
     public function visa()
     {
-        return $this->belongsTo(Visa::class);
+        return $this->belongsTo(ProjectItemVisa::class);
     }
 
     public function customer()

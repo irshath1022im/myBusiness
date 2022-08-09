@@ -5,24 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Visa extends Model
+class ProjectItemVisa extends Model
 {
     use HasFactory;
 
-    public function project()
+    public function company()
     {
-        return $this->belongsTo(Projects::class);
+        return $this->belongsTo(Company::class);
     }
 
     public function sale()
     {
         return $this->hasOne(Sale::class);
     }
-
-    // public function transections()
-    // {
-    //     return $this->hasMany(Transection::class);
-    // }
 
     public function visa_costs()
     {
