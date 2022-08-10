@@ -9,9 +9,9 @@ class Visa extends Model
 {
     use HasFactory;
 
-    public function project()
+    public function purchase()
     {
-        return $this->belongsTo(Project::class);
+        return $this->belongsTo(Purchase::class);
     }
 
     public function company()

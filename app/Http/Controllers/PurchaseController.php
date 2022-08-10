@@ -15,7 +15,10 @@ class PurchaseController extends Controller
     public function index()
     {
         //
-        return view('purchase.index');
+        $result = Purchase::with(['supplier', 'visas'=> function($query){
+            return $query->with('company');
+        }])->get();
+        return view('purchase.index',['purchases' => $result]);
     }
 
     /**
@@ -48,6 +51,10 @@ class PurchaseController extends Controller
     public function show(Purchase $purchase)
     {
         //
+        $result = Purchase::with('payments', 'supplier','visas')->findOrFail($purchase->id);
+        // return $result;
+        return view('purchase.show',['purchase' => $result]);
+
     }
 
     /**

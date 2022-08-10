@@ -47,6 +47,8 @@ class PaymentController extends Controller
     public function show(Payment $payment)
     {
         //
+        // $result = Payment::where('purchase_id', $payment->purchase_id)->get();
+
     }
 
     /**

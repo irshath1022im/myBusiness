@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\SponsorChangeController;
@@ -25,6 +26,7 @@ Route::get('/', function () {
 });
 
 Route::resource('purchase', PurchaseController::class);
+Route::resource('payment', PaymentController::class);
 Route::resource('/projects', ProjectController::class);
 
 Route::resource('/visas', VisaController::class);
