@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\SponsorChangeController;
 use App\Http\Controllers\VisaController;
 use App\Models\Customer;
@@ -23,7 +24,7 @@ Route::get('/', function () {
     return view('home');
 });
 
-
+Route::resource('purchase', PurchaseController::class);
 Route::resource('/projects', ProjectController::class);
 
 Route::resource('/visas', VisaController::class);

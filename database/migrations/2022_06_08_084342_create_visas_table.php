@@ -15,7 +15,7 @@ class CreateVisasTable extends Migration
     {
         Schema::create('visas', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('project_id');
+            $table->unsignedBigInteger('purchase_id');
             $table->string('vpnumber');
             $table->unsignedBigInteger('company_id');
             $table->string('country');
@@ -23,7 +23,7 @@ class CreateVisasTable extends Migration
             $table->integer('qty');
             $table->integer('cost');
             $table->timestamps();
-            $table->foreign('project_id')->references('id')->on('projects');
+            $table->foreign('purchase_id')->references('id')->on('purchases');
             $table->foreign('company_id')->references('id')->on('companies');
         });
     }
