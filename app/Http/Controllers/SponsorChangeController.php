@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Project;
+use App\Models\SponsorChange;
 use Illuminate\Http\Request;
 
-class ProjectController extends Controller
+class SponsorChangeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,12 +15,9 @@ class ProjectController extends Controller
     public function index()
     {
         //
-        $query = Project::with(['visas' => function($query){
-            return $query->with('company');
-        },'sponsorChanges','project_type'])->get();
 
-        // return $query;
-        return view('projects', ['projects' => $query]);
+        $result = SponsorChange::get();
+        return view('sponsor_changes.index', ['sponsor_changes' => $result]);
     }
 
     /**
@@ -53,6 +50,8 @@ class ProjectController extends Controller
     public function show($id)
     {
         //
+        $result = SponsorChange::findOrFail($id);
+        return view('sponsor_changes.show',['sponsor_change' => $result]);
     }
 
     /**

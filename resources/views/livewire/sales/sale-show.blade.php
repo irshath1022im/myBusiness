@@ -16,7 +16,7 @@
                             <tr>
                                 <th>SALE #</th>
                                 <th>CUSTOMER NAME</th>
-                                <th>AMOUNT</th>
+                                <th>SALE AMOUNT</th>
                                 <th>REMARK</th>
                             </tr>
                         </thead>

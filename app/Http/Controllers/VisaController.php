@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Project;
 use App\Models\ProjectItemVisa;
+use App\Models\Visa;
 use Illuminate\Http\Request;
 
 class VisaController extends Controller
@@ -56,7 +57,7 @@ class VisaController extends Controller
     public function show($id)
     {
         //
-        $result = ProjectItemVisa::FindOrfail($id);
+        $result = Visa::FindOrfail($id);
         return view('visas.show',['visa' => $result]);
     }
 

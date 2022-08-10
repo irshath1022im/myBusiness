@@ -11,12 +11,12 @@ class Project extends Model
 
     public function visas()
     {
-        return $this->hasMany(ProjectItemVisa::class);
+        return $this->hasMany(Visa::class);
     }
 
     public function sponsorChanges()
     {
-        return $this->hasMany(ProjectItemSponsorChange::class);
+        return $this->hasMany(SponsorChange::class);
     }
 
     public function project_type()

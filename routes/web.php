@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\SponsorChangeController;
 use App\Http\Controllers\VisaController;
 use App\Models\Customer;
 use App\Models\Project;
@@ -28,3 +29,4 @@ Route::resource('/projects', ProjectController::class);
 Route::resource('/visas', VisaController::class);
 
 Route::resource('customers',  CustomerController::class);
+Route::resource('sponsor_changes',  SponsorChangeController::class);

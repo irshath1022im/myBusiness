@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProjectItemSponsorChangesTable extends Migration
+class CreateSponsorChangesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class CreateProjectItemSponsorChangesTable extends Migration
      */
     public function up()
     {
-        Schema::create('project_item_sponsor_changes', function (Blueprint $table) {
+        Schema::create('sponsor_changes', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('project_id');
             $table->string('qid');
             $table->date('expiry_date');
-            $table->string('present_company');
+            $table->string('present_company')->nullable();
+            $table->text('remark')->nullable();
             $table->foreign('project_id')->references('id')->on('projects');
             $table->timestamps();
         });
@@ -31,6 +32,6 @@ class CreateProjectItemSponsorChangesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('project_item_sponsor_changes');
+        Schema::dropIfExists('sponsor_changes');
     }
 }

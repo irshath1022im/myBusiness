@@ -11,6 +11,6 @@ class VisaCost extends Model
 
     public function visa()
     {
-        return $this->belongsTo(ProjectItemVisa::class, 'project_item_visa_id');
+        return $this->belongsTo(visa::class);
     }
 }

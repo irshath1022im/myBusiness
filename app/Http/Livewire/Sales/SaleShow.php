@@ -18,7 +18,7 @@ class SaleShow extends Component
     public function render()
     {
 
-        $result = Sale::where('project_item_visa_id',$this->visa_id)
+        $result = Sale::where('visa_id',$this->visa_id)
                         ->with('visa')
                         ->get();
         return view('livewire.sales.sale-show', ['sale' => $result]);

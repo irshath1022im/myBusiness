@@ -11,7 +11,7 @@ class Company extends Model
 
     public function visas()
     {
-        return $this->hasMany(ProjectItemVisa::class);
+        return $this->hasMany(Visa::class);
     }
 
 }

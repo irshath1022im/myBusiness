@@ -5,7 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ProjectItemSponsorChange extends Model
+class SponsorChange extends Model
 {
     use HasFactory;
+
+    public function logs()
+    {
+        return $this->hasMany(SponsorChangeLog::class);
+    }
 }

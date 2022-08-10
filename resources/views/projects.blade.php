@@ -57,11 +57,48 @@
 
                      @elseif (count($project->sponsorChanges))
 
-                     <div class="alert alert-light" role="alert">
-                        <strong>SPONSOR CHANGE CARD</strong>
-                    </div>
-                    
+                     {{-- @dump($project->sponsorChanges) --}}
 
+                     <div class="card">
+                        <div class="card-body">
+                            
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>ORDER #</th>
+                                        <th>QID</th>
+                                        <th>EXPIRY DATE</th>
+                                        <th>PRESENT COMPANY</th>
+                                        <th>STATUS</th>
+                                        <th>REMARK</th>
+                                        <th>LOGS</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($project->sponsorChanges as $item)
+                                        <tr>
+                                            <td scope="row">{{ $item->id }}</td>
+                                            <td>{{ $item->qid }}</td>
+                                            <td>{{ $item->expiry_date }}</td>
+                                            <td>{{ $item->present_company }}</td>
+                                            <td>STATUS</td>
+                                            <td>{{ $item->remark }}</td>
+                                            <td>
+                                                <a name="" id="" class="btn btn-primary" href="{{ route('sponsor_changes.show', ['sponsor_change' => $item->id])}}" role="button">View</a>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                    
+                                </tbody>
+                            </table>
+                          
+                        </div>
+                     </div>
+
+
+
+                        {{-- @livewire('components.sponsor-change-project-card', ['project_id']) --}}
+                    
                     @else
                     
                     <div class="alert alert-light" role="alert">

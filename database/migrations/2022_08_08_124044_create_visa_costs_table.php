@@ -15,11 +15,11 @@ class CreateVisaCostsTable extends Migration
     {
         Schema::create('visa_costs', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('project_item_visa_id');
+            $table->unsignedBigInteger('visa_id');
             $table->integer('amount');
             $table->text('remark');
             $table->timestamps();
-            $table->foreign('project_item_visa_id')->on('project_item_visas')->references('id');
+            $table->foreign('visa_id')->on('visas')->references('id');
         });
     }
 
