@@ -18,8 +18,11 @@
     @foreach ($purchases as $purchase)
 
         <div class="card">
-            <div class="card-header">{{$purchase->date}} / {{$purchase->supplier->name}} / {{$purchase->cost}} / <a class="btn btn-info btn-sm " href="{{route('purchase.show',['purchase'=>$purchase->id])}}"  role="button">PAYMENT HISTORY</a>
-                {{-- <div class="card-title">{{ $visa->id }} / {{ $visa->country }} / {{ $visa->position }} /{{ $visa->cost }} </div> --}}
+            <div class="card-header">
+
+                <div class="card-title">{{$purchase->date}} / {{$purchase->supplier->name}} / {{$purchase->cost}}
+                    <a name="" id="" class="btn btn-primary" href="{{ route('purchase.show',['purchase' => $purchase->id]) }}" role="button">VIEW</a>
+                </div>
             </div>
             <div class="card-body">
 

@@ -8,9 +8,67 @@
             Balance To Pay: {{ $purchase->cost - $purchase->payments->sum('amount')}}
         </div>
     </div>
+
     <div class="card-body">
 
         <div class="card">
+
+            <div class="card-header">
+                <div class="card-title">VISAS</div>
+            </div>
+
+            <div class="card-body">
+
+                @if (count($purchase->visas) > 0)
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>VP NUMBER</th>
+                                <th>COMPNAY</th>
+                                <th>COUNTRY</th>
+                                <th>QTY</th>
+                                <th>COST</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+
+                            @foreach ($purchase->visas as $visa)
+                                <tr>
+                                    <td scope="row">{{ $visa->vpnumber }}</td>
+                                    <td>{{ $visa->company->company }}</td>
+                                    <td>{{ $visa->country }}</td>
+                                    <td>{{ $visa->qty }}</td>
+                                    <td>{{ $visa->cost }}</td>
+                                </tr>
+
+                            @endforeach
+                        </tbody>
+                    </table>
+
+
+
+                @else
+
+                   <div class="alert alert-warning" role="alert">
+                    <strong>NO VISAS FOUND...</strong>
+                   </div>
+
+
+                 @endif
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <div class="card-body">
+
+        <div class="card">
+
             <div class="card-header">
                 <div class="card-title">PAYMENT HISTORY </div>
             </div>
@@ -19,48 +77,52 @@
 
                 @if (count($purchase->payments) > 0)
 
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>DATE</th>
-                            <th>AMOUNT</th>
-                            <th>REMARK</th>
-                            <th>ITEMS</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-
-                        @foreach ($purchase->payments as $payment)
+                    <table class="table">
+                        <thead>
                             <tr>
-                                <td scope="row">{{ $payment->date }}</td>
-                                <td>{{ $payment->amount }}</td>
-                                <td>{{ $payment->remark }}</td>
-                                <td>
-                                    <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                                        ITEMS
-                                      </button>
-
-                                </td>
-
-
+                                <th>DATE</th>
+                                <th>AMOUNT</th>
+                                <th>REMARK</th>
+                                <th>ITEMS</th>
                             </tr>
-
-                        @endforeach
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
 
 
+                            @foreach ($purchase->payments as $payment)
+                                <tr>
+                                    <td scope="row">{{ $payment->date }}</td>
+                                    <td>{{ $payment->amount }}</td>
+                                    <td>{{ $payment->remark }}</td>
+                                    <td>
+                                        <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                            ITEMS
+                                        </button>
 
-                    @else
+                                    </td>
 
-                    <div class="alert alert-info">NO PAYMENT MADE</div>
+
+                                </tr>
+
+                            @endforeach
+                        </tbody>
+                    </table>
+
+
+
+                @else
+
+                <div class="alert alert-warning" role="alert">
+                    <strong>NO PAYMENT MADE FOR THIS PURCHASE...</strong>
+                   </div>
 
                  @endif
 
-                </div>
             </div>
+
+        </div>
     </div>
+
 </div>
 
 
