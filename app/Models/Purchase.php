@@ -9,6 +9,8 @@ class Purchase extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['date', 'supplier_id', 'cost'];
+
     public function visas()
     {
         return $this->hasMany(Visa::class);

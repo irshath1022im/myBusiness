@@ -2,6 +2,19 @@
 
 @section('content')
 
+    @if (session()->has('message'))
+    <div class="alert alert-success">
+        {{ session('message') }}
+    </div>
+    @endif
+
+    @if (count($purchases) < 1 )
+        <div class="alert alert-warning" role="alert">
+            <strong>NO PURCHASES FOUND <a href="{{ route('purchase.create') }}" class="badge bg-primary">CREATE NEW</a></strong>
+        </div>
+
+    @endif
+
     @foreach ($purchases as $purchase)
 
         <div class="card">
@@ -74,6 +87,8 @@
     </br>
 
     @endforeach
+
+
 
 
 @endsection

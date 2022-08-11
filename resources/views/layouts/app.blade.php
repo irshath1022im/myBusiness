@@ -13,7 +13,7 @@
 <body>
 
 
-  <nav class="navbar navbar-expand-sm navbar-light bg-light">
+  <nav class="navbar navbar-expand-sm navbar-light bg-success">
       <div class="container">
         <a class="navbar-brand" href="#">MY BUSINESS</a>
         <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
@@ -29,21 +29,24 @@
                     <a class="nav-link" href="{{ route('supplier.index') }}">SUPPLIER</a>
                 </li>
 
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link" href="{{ route('purchase.index') }}">PURCHASE</a>
+                </li> --}}
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="{{ route('purchase.index') }}" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">PURCHASE</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownId">
+                        <a class="dropdown-item" href="{{ route('purchase.index') }}">PURCHASES</a>
+                        <a class="dropdown-item" href="{{ route('purchase.create') }}">NEW PURCHASE</a>
+                        <a class="dropdown-item" href="#">SEARCH</a>
+                    </div>
                 </li>
 
 
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('visas.index') }}">VISA</a>
                 </li>
-                {{-- <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="{{ route('supplier.index') }}" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">SUPPLIER</a>
-                    <div class="dropdown-menu" aria-labelledby="dropdownId">
-                        <a class="dropdown-item" href="#">Action 1</a>
-                        <a class="dropdown-item" href="#">Action 2</a>
-                    </div>
-                </li> --}}
+
             </ul>
         </div>
     </div>
