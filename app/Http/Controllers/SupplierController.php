@@ -15,6 +15,9 @@ class SupplierController extends Controller
     public function index()
     {
         //
+        $result = Supplier::get();
+
+        return view('suppliers.index',['suppliers'=> $result]);
     }
 
     /**
@@ -25,6 +28,7 @@ class SupplierController extends Controller
     public function create()
     {
         //
+        return view('suppliers.create');
     }
 
     /**
@@ -36,6 +40,8 @@ class SupplierController extends Controller
     public function store(Request $request)
     {
         //
+
+
     }
 
     /**

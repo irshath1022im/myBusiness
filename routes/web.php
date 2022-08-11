@@ -5,6 +5,7 @@ use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\SponsorChangeController;
+use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\VisaController;
 use App\Models\Customer;
 use App\Models\Project;
@@ -25,6 +26,7 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::resource('supplier', SupplierController::class);
 Route::resource('purchase', PurchaseController::class);
 Route::resource('payment', PaymentController::class);
 Route::resource('/projects', ProjectController::class);
