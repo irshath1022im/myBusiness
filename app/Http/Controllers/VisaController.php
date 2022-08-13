@@ -17,14 +17,10 @@ class VisaController extends Controller
     public function index()
     {
         //
-        $query = Project::with(['visas' => function($query){
-            return $query->with('company');
-                }, 'project_type'])
-            ->where('project_type_id', 1)
-        ->get();
+        $result = Visa::with('company')->paginate(10);
 
         // return $query;
-        return view('visas.index', ['projects' => $query]);
+        return view('visas.index', ['visas' => $result]);
     }
 
     /**
