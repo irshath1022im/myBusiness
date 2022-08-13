@@ -17,7 +17,7 @@ class VisaController extends Controller
     public function index()
     {
         //
-        $result = Visa::with('company')->paginate(10);
+        $result = Visa::with('company')->withCount('sale')->paginate(10);
 
         // return $query;
         return view('visas.index', ['visas' => $result]);

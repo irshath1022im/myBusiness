@@ -15,9 +15,11 @@ class PurchaseController extends Controller
     public function index()
     {
         //
-        $result = Purchase::with(['supplier', 'visas'=> function($query){
-            return $query->with('company');
-        }])->get();
+        $result = Purchase::with(['supplier',
+                'visas'=> function($query){
+                        return $query->with('company')->withCount('sale');
+        }])
+                ->get();
         return view('purchase.index',['purchases' => $result]);
     }
 
@@ -52,7 +54,11 @@ class PurchaseController extends Controller
     public function show(Purchase $purchase)
     {
         //
-        $result = Purchase::with('payments', 'supplier','visas')->findOrFail($purchase->id);
+        $result = Purchase::with(['payments', 'supplier',
+                    'visas' => function($query){
+                        return $query->withCount('sale');
+                    }])
+                    ->findOrFail($purchase->id);
         // return $result;
         return view('purchase.show',['purchase' => $result]);
 
@@ -92,3 +98,4 @@ class PurchaseController extends Controller
         //
     }
 }
+;

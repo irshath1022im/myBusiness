@@ -2,10 +2,11 @@
 
 @section('content')
 
+    {{-- @dump($visas) --}}
 
         <div class="card">
-            <div class="card-header">VISAS
-                {{-- <div class="card-title">{{ $visa->id }} / {{ $visa->country }} / {{ $visa->position }} /{{ $visa->cost }} </div> --}}
+            <div class="card-header">
+                <div class="card-title"><h3>VISAS</h3></div>
             </div>
 
             <div class="card-body">
@@ -26,7 +27,6 @@
 
 
                 </div>
-
 
             </div>
 
