@@ -55,12 +55,19 @@
 
 <div class="container">
 
+    @component('components.session-msg')
+
+    @endcomponent
+
     @yield('content')
 
 </div>
 
+
+
 @livewireScripts
 <script src="{{ asset('js/app.js') }}"></script>
+
 
 </body>
 </html>

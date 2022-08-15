@@ -1,64 +1,83 @@
 <div>
 
- @livewire('purchase.add-payment')
-    
-        {{-- <div class="card">
 
-            <div class="card-header">
-                <div class="card-title">PAYMENT HISTORY 
-                     <button class="btn btn-sm btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">+</button>
-                </div>
+    @component('components.session-msg')
+
+    @endcomponent
+
+
+    <div wire:loading >
+        <div class="spinner-border text-success" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+    </div>
+
+
+
+    <div class="card" wire:loading.remove>
+
+        <div class="card-header">
+            <div class="card-title">PAYMENT HISTORY
+                 <button class="btn btn-sm btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">+</button>
             </div>
+        </div>
 
-            <div class="card-body">
-                @if (count($payments) > 0)
+        <div class="card-body">
+            @if (count($payments) > 0)
 
-                    <table class="table">
-                        <thead>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>DATE</th>
+                            <th>AMOUNT</th>
+                            <th>REMARK</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+
+                        @foreach ($payments as $payment)
                             <tr>
-                                <th>DATE</th>
-                                <th>AMOUNT</th>
-                                <th>REMARK</th>
+                                <td scope="row">{{ $payment->date }}</td>
+                                <td>{{ $payment->amount }}</td>
+                                <td>{{ $payment->remark }}</td>
+
+
+
                             </tr>
-                        </thead>
-                        <tbody>
 
-
-                            @foreach ($payments as $payment)
-                                <tr>
-                                    <td scope="row">{{ $payment->date }}</td>
-                                    <td>{{ $payment->amount }}</td>
-                                    <td>{{ $payment->remark }}</td>
+                        @endforeach
+                    </tbody>
+                </table>
 
 
 
-                                </tr>
+            @else
 
-                            @endforeach
-                        </tbody>
-                    </table>
+            <div class="alert alert-warning" role="alert">
+                <strong>NO PAYMENT MADE FOR THIS PURCHASE...</strong>
+               </div>
 
+             @endif
 
+        </div>
 
-                @else
-
-                <div class="alert alert-warning" role="alert">
-                    <strong>NO PAYMENT MADE FOR THIS PURCHASE...</strong>
-                   </div>
-
-                 @endif
-
-            </div>
-
-        </div> --}}
+    </div>
 
 
 
-{{-- ADD PAYMENT MODAL --}}
+
+{{-- ADDPAYMENTMODAL --}}
+
+
+
+
+
+
 
 
 <!-- Modal -->
-{{-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"  wire:ignore.self>
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -66,18 +85,14 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        @livewire('purchase.add-payment')
+        @livewire('purchase.add-payment',['purchase_id' => $purchase_id])
       </div>
-      <div class="modal-footer">
+      {{-- <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+      </div> --}}
     </div>
   </div>
-</div> --}}
-
-
-
+</div>
 
 
 
