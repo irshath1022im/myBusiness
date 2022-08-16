@@ -9,6 +9,8 @@ class Sale extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['date', 'customer_id', 'visa_id', 'amount','remark'];
+
     public function visa()
     {
         return $this->belongsTo(Visa::class);

@@ -26,7 +26,7 @@
                     </a>
                     @else
                     <a class="btn btn-success"
-                    href="#"   role="button">SALE
+                    href="{{ route('visas.show',['visa' => $visa->id]) }}"   role="button">SALE
                     </a>
                     @endif
 

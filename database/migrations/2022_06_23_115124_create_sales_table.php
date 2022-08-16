@@ -15,10 +15,11 @@ class CreateSalesTable extends Migration
     {
         Schema::create('sales', function (Blueprint $table) {
             $table->id();
+            $table->date('date');
             $table->unsignedBigInteger('customer_id');
             $table->unsignedBigInteger('visa_id');
             $table->integer('amount');
-            $table->text('remakr')->nullable();
+            $table->text('remark')->nullable();
             $table->timestamps();
             $table->foreign('customer_id')->on('customers')->references('id');
             $table->foreign('visa_id')->on('visas')->references('id');
