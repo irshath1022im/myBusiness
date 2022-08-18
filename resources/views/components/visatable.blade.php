@@ -6,6 +6,7 @@
             <th>COUNTRY</th>
             <th>POSITION</th>
             <th>COMPANY</th>
+            <th>COST</th>
             <th>STATUS</th>
         </tr>
     </thead>
@@ -17,7 +18,8 @@
                 <td class="text-uppercase">{{ $visa->vpnumber }}</td>
                 <td class="text-uppercase">{{ $visa->country }}</td>
                 <td class="text-uppercase">{{ $visa->position }}</td>
-                <td class="text-uppercase">{{ $visa->company->company}}</td>
+                <td class="text-uppercase">{{ $visa->company->company }}</td>
+                <td class="text-uppercase">{{ $visa->cost }}</td>
                 <td class="text-uppercase">
 
                     @if ($visa->sale_count > 0)
@@ -26,7 +28,7 @@
                     </a>
                     @else
                     <a class="btn btn-success"
-                    href="{{ route('visas.show',['visa' => $visa->id]) }}"   role="button">SALE
+                    href="{{ route('visas.show',['visa' => $visa->id]) }}"   role="button">IN STOCK
                     </a>
                     @endif
 
