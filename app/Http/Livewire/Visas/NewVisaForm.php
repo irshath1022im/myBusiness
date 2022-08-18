@@ -20,6 +20,7 @@ class NewVisaForm extends Component
     public $companies;
 
     protected $rules = [
+        'vpnumber' => 'required',
         'selected_company_id'=>'required',
         'selected_position'=>'required',
         'selected_country'=>'required',

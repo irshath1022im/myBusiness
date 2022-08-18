@@ -19,7 +19,7 @@
           <select class="form-control" name="" id="" wire:model.lazy="selected_company_id">
             <option  value="">Select</option>
             @foreach ($companies as $company)
-                <option  value="{{ $company->id }}">{{ $company->company }}</option>
+                <option  value="{{ $company->id }}" class="text-uppercase">{{ $company->company }}</option>
             @endforeach
 
           </select>
@@ -38,7 +38,7 @@
               <option  value="">Select</option>
               @foreach ($countries as $country)
 
-                <option  value="{{ $country }}">{{ $country }}</option>
+                <option  value="{{ $country }}" class="text-uppercase">{{ $country }}</option>
               @endforeach
             </select>
 
@@ -55,7 +55,7 @@
               <option value="">Select</option>
               @foreach ($positions as $position)
 
-              <option value="{{ $position->position }}">{{ $position->position }}</option>
+              <option value="{{ $position->position }}" class="text-uppercase">{{ $position->position }}</option>
               @endforeach
             </select>
 
