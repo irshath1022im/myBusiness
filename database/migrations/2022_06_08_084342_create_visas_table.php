@@ -20,7 +20,6 @@ class CreateVisasTable extends Migration
             $table->unsignedBigInteger('company_id');
             $table->string('country');
             $table->string('position');
-            $table->integer('qty');
             $table->integer('cost');
             $table->timestamps();
             $table->foreign('purchase_id')->references('id')->on('purchases');

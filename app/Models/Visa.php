@@ -9,6 +9,8 @@ class Visa extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['purchase_id', 'company_id', 'vpnumber', 'cost', 'position', 'country'];
+
     public function purchase()
     {
         return $this->belongsTo(Purchase::class);

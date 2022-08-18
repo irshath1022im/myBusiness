@@ -1,11 +1,5 @@
 <div>
 
-
-    @component('components.session-msg')
-
-    @endcomponent
-
-
     <div wire:loading >
         <div class="spinner-border text-success" role="status">
             <span class="visually-hidden">Loading...</span>
