@@ -14,8 +14,7 @@ class CustomerController extends Controller
      */
     public function index()
     {
-     $result = Customer::
-                     get();
+     $result = Customer::withCount('sales')-> get();
         return view ('customers.index', ['customers' => $result]);
     }
 
