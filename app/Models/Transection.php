@@ -9,7 +9,8 @@ class Transection extends Model
 {
     use HasFactory;
 
-    
+    protected $fillable = ['date', 'amount', 'sale_id', 'remark'];
+
     public function sale()
     {
         return $this->belongsTo(Sale::class);

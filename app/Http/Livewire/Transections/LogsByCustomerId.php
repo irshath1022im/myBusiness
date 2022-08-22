@@ -9,10 +9,12 @@ class LogsByCustomerId extends Component
 {
 
     public $sale_id;
+    public $visa_id;
 
-    public function mount($sale_id)
+    public function mount($sale_id, $visa_id)
     {
         $this->sale_id = $sale_id;
+        $this->visa_id = $visa_id;
     }
 
     public function render()
@@ -23,5 +25,5 @@ class LogsByCustomerId extends Component
         return view('livewire.transections.logs-by-customer-id',['transections' => $result]);
     }
 
-    
+
 }

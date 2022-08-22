@@ -16,6 +16,7 @@ class CreateTransectionsTable extends Migration
         Schema::create('transections', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('sale_id');
+            $table->date('date');
             $table->integer('amount');
             $table->text('remark')->nullable();
             $table->timestamps();

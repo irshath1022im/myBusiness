@@ -4,10 +4,10 @@
             <div class="card-title">{{ $visa_id }} / {{ $country }} / {{ $cost }}</div>
         </div>
     <div class="card-body">
-        
+
         @livewire('sales.sale-show',['visa_id' => $visa_id])
 
-        
+
         <hr>
 
 
@@ -15,7 +15,7 @@
 
 
 
-   
+
     </div>
 </div>
 </div>

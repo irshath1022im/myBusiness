@@ -8,7 +8,7 @@
 
             <div class="card">
                 <div class="card-header">
-                    <div class="card-title"></div>
+                    <div class="card-title">SALE</div>
                 </div>
                 <div class="card-body">
                     <table class="table">
@@ -35,7 +35,7 @@
 
 
 
-                    @livewire('transections.logs-by-customer-id',['sale_id' => $sale[0]['id']])
+                    @livewire('transections.logs-by-customer-id',['sale_id' => $sale[0]['id'],'visa_id' => $visa_id])
 
 
                 </div>
@@ -47,7 +47,7 @@
             @else
 
                 <div class="alert alert-info" role="alert">
-                    <strong>NO SALES FOUND....<a class="btn btn-outline-dark" href="{{ route('sales.create')}}" role="button" data-bs-toggle="modal" data-bs-target="#modelId">SALE THIS VISA</a></strong>
+                    <strong>NO SALES FOUND....<a class="btn btn-outline-dark" role="button" data-bs-toggle="modal" data-bs-target="#modelId">SALE THIS VISA</a></strong>
                 </div>
 
             @endif
