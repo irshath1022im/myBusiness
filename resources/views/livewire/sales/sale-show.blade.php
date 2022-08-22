@@ -15,6 +15,7 @@
                         <thead>
                             <tr>
                                 <th>SALE #</th>
+                                <th>DATE</th>
                                 <th>CUSTOMER NAME</th>
                                 <th>SALE AMOUNT</th>
                                 <th>REMARK</th>
@@ -25,6 +26,7 @@
 
                             <tr>
                                 <td scope="row">{{ $item->id}}</td>
+                                <td>{{ $item->date }}</td>
                                 <td>{{ $item->customer->customer }}</td>
                                 <td>{{ $item->amount }}</td>
                                 <td>{{ $item->remark }}</td>
