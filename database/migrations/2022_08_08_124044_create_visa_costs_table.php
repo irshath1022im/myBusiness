@@ -16,6 +16,7 @@ class CreateVisaCostsTable extends Migration
         Schema::create('visa_costs', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('visa_id');
+            $table->date('date');
             $table->integer('amount');
             $table->text('remark');
             $table->timestamps();

@@ -1,7 +1,7 @@
 <div>
     <div class="card">
         <div class="card-header">
-            <div class="card-title">{{ $visa_id }} / {{ $country }} / {{ $cost }}</div>
+            <div class="card-title text-uppercase">{{ $visa_id }} / {{ $country }} / {{ $cost }}</div>
         </div>
     <div class="card-body">
 

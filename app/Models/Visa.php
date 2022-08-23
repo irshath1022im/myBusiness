@@ -25,4 +25,6 @@ class Visa extends Model
     {
         return $this->hasOne(Sale::class);
     }
+
+
 }

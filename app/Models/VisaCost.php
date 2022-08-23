@@ -9,6 +9,8 @@ class VisaCost extends Model
 {
     use HasFactory;
 
+    protected $fillable =['visa_id', 'date','remark', 'amount'];
+
     public function visa()
     {
         return $this->belongsTo(visa::class);

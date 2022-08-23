@@ -1,4 +1,6 @@
-  <table class="table">
+
+{{-- @dump($visas) --}}
+<table class="table">
     <thead>
         <tr>
             <th>ID</th>
