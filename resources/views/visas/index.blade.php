@@ -28,6 +28,10 @@
 
                 </div>
 
+                <div class="card-footer">
+                    {{ $visas->links() }}
+                </div>
+
             </div>
 
 

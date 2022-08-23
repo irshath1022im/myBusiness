@@ -14,7 +14,7 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>SALE #</th>
+                                <th>#</th>
                                 <th>DATE</th>
                                 <th>CUSTOMER NAME</th>
                                 <th>SALE AMOUNT</th>

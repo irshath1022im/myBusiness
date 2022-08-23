@@ -2,6 +2,7 @@
 
 @section('content')
 
+
 @livewire('visas.show', ['visa' =>$visa])
-    
+
 @endsection
