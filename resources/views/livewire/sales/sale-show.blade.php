@@ -6,7 +6,7 @@
 
 
 
-            <div class="card">
+            <div class="card border-success">
                 <div class="card-header">
                     <div class="card-title">SALE</div>
                 </div>

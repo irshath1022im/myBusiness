@@ -4,7 +4,7 @@
 
     <div class="card">
         <div class="card-header">
-            <div class="card-title">SALES <a class="btn btn-info btn-sm " href="#"   role="button">NEW SALE</a></div>
+            <div class="card-title">SALES</div>
         </div>
       <div class="card-body">
 

@@ -26,5 +26,21 @@ class Visa extends Model
         return $this->hasOne(Sale::class);
     }
 
+    public function visa_assignment()
+    {
+        return $this->hasOne(VisaAssignment::class);
+    }
+
+    public function visaHolderThruVisa()
+    {
+        return $this->hasOneThrough(
+            VisaHolder::class,
+            VisaAssignment::class,
+            'visa_id',
+            'id'
+
+        );
+    }
+
 
 }

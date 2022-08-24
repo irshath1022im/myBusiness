@@ -5,12 +5,12 @@
     @if (count($visa_costs) > 0 )
 
 
-        <div class="card">
+        <div class="card border-primary ">
             <div class="card-header">
                 <div class="card-title text-underline">
                     <strong>VISA COSTS</strong>
                     <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#visa-cost">
-                        ADD TRANSECTION
+                        ADD COST
                       </button>
                 </div>
 

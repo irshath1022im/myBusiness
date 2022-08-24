@@ -8,6 +8,7 @@ use App\Http\Controllers\SaleController;
 use App\Http\Controllers\SponsorChangeController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\VisaController;
+use App\Http\Controllers\VisaHolderController;
 use App\Models\Customer;
 use App\Models\Project;
 use Illuminate\Support\Facades\Route;
@@ -34,6 +35,7 @@ Route::resource('/projects', ProjectController::class);
 Route::resource('/sales', SaleController::class);
 
 Route::resource('/visas', VisaController::class);
+Route::resource('/visaholders', VisaHolderController::class);
 
 Route::resource('customers',  CustomerController::class);
 Route::resource('sponsor_changes',  SponsorChangeController::class);

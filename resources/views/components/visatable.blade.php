@@ -10,6 +10,7 @@
             <th>COMPANY</th>
             <th>COST</th>
             <th>STATUS</th>
+            <th>ASSIGNED</th>
         </tr>
     </thead>
     <tbody>
@@ -45,6 +46,8 @@
 
 
                 </td>
+
+                <td class="text-uppercase">{{ $visa->visaHolderThruVisa ? $visa->visaHolderThruVisa->name : 'Not Assigned' }}</td>
 
 
 

@@ -4,7 +4,8 @@
 
 <div class="card">
     <div class="card-header">
-        <div class="card-title ">CUSTOMERS <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modelId">NEW CUSTOMER</button></div>
+        <div class="card-title ">CUSTOMERS <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modelId">NEW CUSTOMER</button>
+        </div>
     </div>
     <div class="card-body">
 
@@ -39,9 +40,8 @@
                                     VISAS <span class="badge bg-primary">{{ $customer->sales_count }}</span>
                             </button></a>
 
-                            <button class="btn btn-success">
-                                ACCOUNTS <span class="badge bg-primary">15</span>
-                        </button>
+
+
                         </div>
 
                     </div>
@@ -76,6 +76,7 @@
         </div>
     </div>
 </div>
+
 
 
 

@@ -17,7 +17,10 @@ class PurchaseController extends Controller
         //
         $result = Purchase::with(['supplier',
                 'visas'=> function($query){
-                        return $query->with('company')->withCount('sale');
+                        return $query->with(['company', 'visa_assignment' => function($q){
+                            return $q->with('visa_holder');
+                        }])
+                        ->withCount('sale');
         }])
                 ->get();
         return view('purchase.index',['purchases' => $result]);
@@ -56,7 +59,9 @@ class PurchaseController extends Controller
         //
         $result = Purchase::with(['payments', 'supplier',
                     'visas' => function($query){
-                        return $query->withCount('sale');
+                        return $query->with(['visa_assignment' => function($q){
+                            return $q->with('visa_holder');
+                        }])->withCount('sale');
                     }])
                     ->findOrFail($purchase->id);
         // return $result;

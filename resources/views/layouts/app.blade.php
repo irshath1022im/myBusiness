@@ -53,6 +53,10 @@
                 </li>
 
                 <li class="nav-item">
+                    <a class="nav-link" href="{{ route('visaholders.index') }}">VISA HOLDERS</a>
+                </li>
+
+                <li class="nav-item">
                     <a class="nav-link" href="{{ route('sales.index') }}">SALES</a>
                 </li>
 
