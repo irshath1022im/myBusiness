@@ -19,6 +19,7 @@
                     <th>CASH RECEIVED</th>
                     <th>COST</th>
                     <th>ON HAND</th>
+                    <th>BALANCE TO RECEIVE</th>
                 </tr>
             </thead>
             <tbody>
@@ -33,6 +34,7 @@
                     <td>{{ $sale->transections->sum('amount')}}</td>
                     <td>{{ $sale->visa_costs->sum('amount')}}</td>
                     <td>{{ $sale->transections->sum('amount') - $sale->visa_costs->sum('amount') }} </td>
+                    <td>{{ $sale->amount -$sale->transections->sum('amount') }} </td>
                 </tr>
 
                 @endforeach
