@@ -47,11 +47,13 @@ class CustomerController extends Controller
      */
     public function show($id)
     {
-        $result = Customer::with(['sales' => function($query){
-            return $query->with(['visa' => function($query){
-                return $query->with('project');
-            }, 'transections']);
-        }])->findOrFail($id);
+        // $result = Customer::with(['sales' => function($query){
+        //     return $query->with(['visa' => function($query){
+        //         return $query->with('project');
+        //     }, 'transections']);
+        // }])->findOrFail($id);
+
+        $result = Customer::findOrFail($id);
         return view('customers.customer_show',['customer' => $result]);
     }
 

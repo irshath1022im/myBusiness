@@ -35,9 +35,9 @@
                         </div>
 
                         <div class="card-footer">
-                            <button class="btn btn-success">
+                           <a href="{{ route('customers.show', ['customer'=> $customer->id]) }}"> <button class="btn btn-success">
                                     VISAS <span class="badge bg-primary">{{ $customer->sales_count }}</span>
-                            </button>
+                            </button></a>
 
                             <button class="btn btn-success">
                                 ACCOUNTS <span class="badge bg-primary">15</span>
@@ -58,7 +58,7 @@
 
 
 
-<!-- Modal -->
+<!-- Modal New Customer-->
 <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
