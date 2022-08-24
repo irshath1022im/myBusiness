@@ -52,6 +52,10 @@
                     <a class="nav-link" href="{{ route('visas.index') }}">VISAS</a>
                 </li>
 
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('sales.index') }}">SALES</a>
+                </li>
+
             </ul>
         </div>
     </div>

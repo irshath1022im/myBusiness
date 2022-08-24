@@ -15,7 +15,7 @@ class SaleController extends Controller
     public function index()
     {
         //
-        $result = Sale::with('visa')->get();
+        $result = Sale::with('visa','customer','transections','visa_costs')->get();
         return view('sale.indexSale',['sales' => $result]);
     }
 

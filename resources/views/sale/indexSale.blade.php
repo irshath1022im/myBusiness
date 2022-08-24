@@ -12,11 +12,13 @@
             <thead>
                 <tr>
                     <th>SALE ID</th>
-                    <th>SUPPLIER</th>
-                    <th>BUYER</th>
-                    <th>VP NUMBER</th>
-                    <th>COMPANY</th>
-                    <th>COUNTRY</th>
+                    <th>DATE</th>
+                    <th>VISA ID</th>
+                    <th>CUSTOMER</th>
+                    <th>SALE AMOUNT</th>
+                    <th>CASH RECEIVED</th>
+                    <th>COST</th>
+                    <th>ON HAND</th>
                 </tr>
             </thead>
             <tbody>
@@ -24,12 +26,13 @@
 
                 <tr>
                     <td scope="row">{{$sale->id}}</td>
-                    <td>{{ $sale->visa->purchase->supplier->name}}</td>
+                    <td>{{ $sale->date}}</td>
+                    <td><a href="{{ route('visas.show',['visa'=> $sale->visa_id]) }}">{{ $sale->visa_id}}</a></td>
                     <td>{{ $sale->customer->customer}}</td>
-                    <td>{{ $sale->visa->vpnumber}}</td>
-                    <td>{{ $sale->visa->company->company}}</td>
-                    <td>{{ $sale->visa->country}}</td>
-                    <td></td>
+                    <td>{{ $sale->amount}}</td>
+                    <td>{{ $sale->transections->sum('amount')}}</td>
+                    <td>{{ $sale->visa_costs->sum('amount')}}</td>
+                    <td>{{ $sale->transections->sum('amount') - $sale->visa_costs->sum('amount') }} </td>
                 </tr>
 
                 @endforeach
