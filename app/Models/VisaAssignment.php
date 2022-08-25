@@ -9,6 +9,8 @@ class VisaAssignment extends Model
 {
     use HasFactory;
 
+    protected $fillable =['date','visa_id','visa_holder_id','expiry_date','status','visa_number'];
+
     public function visa()
     {
         return $this->belongsTo(Visa::class);

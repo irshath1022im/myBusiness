@@ -19,7 +19,7 @@ class SaleShow extends Component
     {
 
         $result = Sale::where('visa_id',$this->visa_id)
-                        ->with('visa')
+                        ->with('visa', 'visa_assignment')
                         ->get();
         return view('livewire.sales.sale-show', ['sale' => $result]);
     }

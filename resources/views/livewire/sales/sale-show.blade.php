@@ -1,6 +1,10 @@
 <div>
 
-    {{-- @dump($visa_id) --}}
+    {{-- @dump($sale[0]['visa_assignment']) --}}
+
+    @foreach ($sale as $item)
+
+
 
     @if (count($sale) > 0)
 
@@ -8,7 +12,24 @@
 
             <div class="card border-success">
                 <div class="card-header">
-                    <div class="card-title">SALE</div>
+                    <div class="card-title">SALE
+
+                        {{-- @dump($item->visa_assignment) --}}
+
+                      @empty($item->visa_assignment)
+                        <button type="button" class="btn btn-primary"
+                        role="button" data-bs-toggle="modal" data-bs-target="#modelId_visa_assignment"
+                        >Assign Visa</button>
+
+                        @else
+
+                        <strong>Visa Assigned to :  {{  $item->visa_assignment->visa_holder->name }} </strong>
+
+                        @endempty
+
+
+
+                    </div>
                 </div>
                 <div class="card-body">
                     <table class="table">
@@ -67,7 +88,34 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
+                            @if (count($sale) > 0)
+
                             @livewire('sales.new-sale', ['visa_id' => $visa_id])
+                            @endif
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+              <!-- Modal -->
+              <div class="modal fade" id="modelId_visa_assignment" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title"><button class="btn">
+                                  VISA ID <span class="badge bg-primary"> {{$visa_id}}</span>
+                            </button></h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            @if (count($sale) > 0)
+                                @livewire('visas.visa-assignment-form', ['visa_id' => $visa_id])
+                            @endif
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -79,7 +127,7 @@
 
 
 
-
+ @endforeach
 
 
 

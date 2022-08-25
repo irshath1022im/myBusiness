@@ -15,9 +15,12 @@ class CreateVisaAssignmentsTable extends Migration
     {
         Schema::create('visa_assignments', function (Blueprint $table) {
             $table->id();
+            $table->date('date');
             $table->unsignedBigInteger('visa_id');
             $table->unsignedBigInteger('visa_holder_id');
-
+            $table->string('visa_number');
+            $table->date('expiry_date');
+            $table->string('status');
             $table->foreign('visa_id')->references('id')->on('visas');
             $table->foreign('visa_holder_id')->references('id')->on('visa_holders');
             $table->timestamps();

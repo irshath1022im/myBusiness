@@ -45,5 +45,16 @@ class Sale extends Model
     }
 
 
+    public function visa_assignment()
+    {
+        return $this->hasOneThrough(
+            VisaAssignment::class,
+            Visa::class,
+            'id',
+            'visa_id',
+            'visa_id'
+        );
+    }
+
 
 }
