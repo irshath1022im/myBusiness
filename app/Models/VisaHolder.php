@@ -9,6 +9,8 @@ class VisaHolder extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['name','passport_number','expiry_date','image','contact_number','country'];
+
     public function visa_assignment()
     {
         return $this->hasOne(VisaAssignment::class);

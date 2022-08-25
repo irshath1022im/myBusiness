@@ -15,7 +15,7 @@ class VisaHolderController extends Controller
     public function index()
     {
         //
-        $result = VisaHolder::get();
+        $result = VisaHolder::with('visa_assignment')->get();
         return view('visa_holders.index', ['visa_holders' => $result]);
     }
 
