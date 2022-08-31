@@ -13,18 +13,27 @@
 
             <div class="card border-success">
                 <div class="card-header">
-                    <div class="card-title">SALE
+                    <div class="card-title d-flex justify-content-between">
+                        <button type="button" class="btn btn-outline-success btn-sm">
+                            <strong>SALE</strong>
+                        </button>
 
                         {{-- @dump($item->visa_assignment) --}}
 
                       @empty($item->visa_assignment)
-                        <button type="button" class="btn btn-primary"
+                        <button type="button" class="btn btn-outline-info"
                         role="button" data-bs-toggle="modal" data-bs-target="#modelId_visa_assignment"
                         >Assign Visa</button>
 
                         @else
 
-                        <strong>Visa Assigned to :  {{  $item->visa_assignment->visa_holder->name }} </strong>
+                                <div>
+
+                                <button class="btn btn-outline-success btn-sm">Visa Assigned to :  {{  $item->visa_assignment->visa_holder->name }} </button>
+                                <button class="btn btn-outline-success btn-sm">Visa No:  {{  $item->visa_assignment->visa_number }} </button>
+                            </div>
+
+                        </div>
 
                         @endempty
 
