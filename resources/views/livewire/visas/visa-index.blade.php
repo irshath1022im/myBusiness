@@ -53,6 +53,11 @@
                            {{-- @dump($visa->visa_assignment) --}}
                         </button>
 
+                        <button type="button" class="btn btn-success btn-sm">
+                            {{$visa->visa_assignment->visa_number}}
+                            {{-- @dump($visa->visa_assignment) --}}
+                         </button>
+
                         @endempty
 
                     </td>
