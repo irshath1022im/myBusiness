@@ -50,8 +50,8 @@
 
             <div class="card-footer">
               <p class="d-inline bg-success p-2">Total Spent: </p>   {{ $visa_costs->sum('amount')}} QR
-              <p class="d-inline bg-success p-2">Visa Sold: </p>{{ $visa_costs[0]->visa->sale->amount }} QR
-              <p class="d-inline bg-success p-2">Profit: </p>{{ $visa_costs[0]->visa->sale->amount - $visa_costs->sum('amount') }} QR
+              {{-- <p class="d-inline bg-success p-2">Visa Sold: </p>{{ $visa_costs->visa->sale->amount }} QR --}}
+              {{-- <p class="d-inline bg-success p-2">Profit: </p>{{ $visa_costs[0]->visa->sale->amount - $visa_costs->sum('amount') }} QR --}}
 
             </div>
 
