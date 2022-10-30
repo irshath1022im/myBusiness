@@ -24,7 +24,7 @@ class VisaHolderForm extends Component
     protected $rules=[
         'name' => 'required',
         'passport_number' => 'required',
-        'expiry_date' => 'required',
+        'expiry_date' => '',
         'image' => '',
         'contact_number' => '',
         'country'=> 'required'

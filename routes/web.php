@@ -10,6 +10,7 @@ use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\VisaController;
 use App\Http\Controllers\VisaHolderController;
 use App\Models\Customer;
+use App\Models\Profit;
 use App\Models\Project;
 use Illuminate\Support\Facades\Route;
 
@@ -39,3 +40,9 @@ Route::resource('/visaholders', VisaHolderController::class);
 
 Route::resource('customers',  CustomerController::class);
 Route::resource('sponsor_changes',  SponsorChangeController::class);
+
+Route::get('/profits', function(){
+    $results = Profit::with('visa')->get();
+
+    return view('profits.index',['profits' => $results]);
+})->name('profits');

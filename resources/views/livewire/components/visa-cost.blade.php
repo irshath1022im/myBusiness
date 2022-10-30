@@ -12,6 +12,10 @@
                     <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#visa-cost">
                         ADD COST
                       </button>
+
+                      <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#addToProfit">
+                        ADD TO PROFIT
+                      </button>
                 </div>
 
             </div>
@@ -82,6 +86,28 @@
                 </div>
                 <div class="modal-body">
                     @livewire('visas.visa-cost-form',['visa_id' => $visa_id])
+
+                </div>
+                {{-- <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save</button>
+                </div> --}}
+            </div>
+        </div>
+    </div>
+
+
+     <!-- Modal FOR ADD TO PROFIT-->
+     <div class="modal fade" id="addToProfit" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">ADD TO PROFIT</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    {{-- @livewire('visas.visa-cost-form',['visa_id' => $visa_id]) --}}
+                    @livewire('components.new-profit-form',['visa_id' => $visa_id])
 
                 </div>
                 {{-- <div class="modal-footer">
