@@ -66,3 +66,6 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 ## 10-30-2022
     * PROFIT PAGE IS CREATED
     * ADD A OPTION TO TRANSFER THE AMONT TO PROFITS TABLE FROM VISA PAGE
+    
+## 11-27-20222
+    ** CREATE A VP EXPIRY DATE COLUMN IN EACH VISA TABLE
