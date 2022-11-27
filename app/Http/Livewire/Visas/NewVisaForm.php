@@ -18,13 +18,15 @@ class NewVisaForm extends Component
     public $countries=['srilanka', 'india','pakistan','nepal'];
     public $positions;
     public $companies;
+    public $expiry_date;
 
     protected $rules = [
         'vpnumber' => 'required',
         'selected_company_id'=>'required',
         'selected_position'=>'required',
         'selected_country'=>'required',
-        'cost' => 'required'
+        'cost' => 'required',
+        'expiry_date' => 'required'
     ];
 
     public function formSubmit()
@@ -37,7 +39,8 @@ class NewVisaForm extends Component
             'company_id' => $this->selected_company_id,
             'position'=> $this->selected_position,
             'country' => $this->selected_country,
-            'cost' => $this->cost
+            'cost' => $this->cost,
+            'expiry_date' => $this->expiry_date
         ];
 
         Visa::create($data);

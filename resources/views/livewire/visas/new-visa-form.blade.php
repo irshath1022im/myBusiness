@@ -12,6 +12,17 @@
       @enderror
         </div>
 
+        <div class="mb-3">
+            <label for="" class="form-label">VP EXIPIRY DATE</label>
+            <input type="date" class="form-control" wire:model.lazy="expiry_date">
+            @error('expiry_date')
+            <div class="alert alert-danger" role="alert">
+                <strong>{{ $message }}</strong>
+            </div>
+
+        @enderror
+          </div>
+
 
 
         <div class="mb-3">

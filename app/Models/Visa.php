@@ -9,7 +9,7 @@ class Visa extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['purchase_id', 'company_id', 'vpnumber', 'cost', 'position', 'country'];
+    protected $fillable = ['purchase_id', 'company_id', 'vpnumber', 'cost', 'position', 'country', 'expiry_date'];
 
     public function purchase()
     {

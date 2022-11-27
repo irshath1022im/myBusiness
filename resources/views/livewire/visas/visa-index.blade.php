@@ -4,6 +4,7 @@
             <tr>
                 <th>ID</th>
                 <th>VP NUMBER</th>
+                <th>VP EXPIRY DATE</th>
                 <th>COUNTRY</th>
                 <th>POSITION</th>
                 <th>COMPANY</th>
@@ -18,6 +19,7 @@
                 <tr>
                     <td scope="row">{{ $visa->id }}</td>
                     <td class="text-uppercase">{{ $visa->vpnumber }}</td>
+                    <td class="text-uppercase">{{ $visa->expiry_date }}</td>
                     <td class="text-uppercase">{{ $visa->country }}</td>
                     <td class="text-uppercase">{{ $visa->position }}</td>
                     <td class="text-uppercase">{{ $visa->company->company }}</td>

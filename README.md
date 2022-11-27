@@ -69,3 +69,5 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
     
 ## 11-27-20222
     ** CREATE A VP EXPIRY DATE COLUMN IN EACH VISA TABLE
+    ** SHOW  IN VISA PAGE 
+

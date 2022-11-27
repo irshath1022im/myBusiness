@@ -2,6 +2,7 @@
 
 @section('content')
 
+
     {{-- @dump($visas) --}}
 
         <div class="card">
